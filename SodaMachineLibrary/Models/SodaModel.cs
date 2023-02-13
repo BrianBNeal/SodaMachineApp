@@ -9,4 +9,9 @@ public class SodaModel
     }
     public string Name { get; }
     public string SlotOccupied { get; }
+
+    public override string ToString()
+    {
+        return base.ToString();
+    }
 }

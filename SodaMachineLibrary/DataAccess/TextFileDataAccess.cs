@@ -6,7 +6,6 @@ namespace SodaMachineLibrary.DataAccess;
 
 public class TextFileDataAccess : IDataAccess
 {
-    private readonly IConfiguration _config;
     private string _coinTextFile;
     private string _sodaTextFile;
     private string _machineInfoTextFile;
@@ -14,11 +13,10 @@ public class TextFileDataAccess : IDataAccess
 
     public TextFileDataAccess(IConfiguration config)
     {
-        _config = config;
-        _coinTextFile = _config.GetValue<string>("TextFileStorage:Coins") ?? "";
-        _sodaTextFile = _config.GetValue<string>("TextFileStorage:Soda") ?? "";
-        _machineInfoTextFile = _config.GetValue<string>("TextFileStorage:MachineInfo") ?? "";
-        _userCreditTextFile = _config.GetValue<string>("TextFileStorage:UserCredit") ?? "";
+        _coinTextFile = config.GetValue<string>("TextFileStorage:Coins") ?? "";
+        _sodaTextFile = config.GetValue<string>("TextFileStorage:Soda") ?? "";
+        _machineInfoTextFile = config.GetValue<string>("TextFileStorage:MachineInfo") ?? "";
+        _userCreditTextFile = config.GetValue<string>("TextFileStorage:UserCredit") ?? "";
     }
 
     private List<CoinModel> RetrieveCoins()

@@ -21,5 +21,4 @@ public interface IDataAccess
     List<CoinModel> CoinInventory_WithdrawCoins(CoinModel coinType, int quantity);
     List<CoinModel> CoinInventory_GetAll();
     void CoinInventory_AddCoins(List<CoinModel> coins);
-
 }
