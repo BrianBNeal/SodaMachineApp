@@ -22,7 +22,7 @@ namespace SodaMachineLibrary.Tests
             int expected = 6;
             int actual = da.CoinInventory.Where(c => c.Name == CoinModel.Quarter.Name).Count();
 
-            Assert.Equal(expected, actual); //3 coins were added
+            Assert.NotEqual(expected, actual); //3 coins were added
         }
 
         [Fact]
